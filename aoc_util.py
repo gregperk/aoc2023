@@ -1,6 +1,6 @@
 import sys
 import re
-from itertools import count, cycle, chain
+from itertools import count, cycle, chain, combinations
 from functools import reduce
 from collections import Counter, deque, defaultdict, namedtuple
 from math import gcd, lcm
