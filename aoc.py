@@ -79,10 +79,11 @@ def uniquify(path):
 def starter_template(input_filenames):
     return f"""#!/usr/bin/env python3
 from aoc_util import *
+set_cases(default_idx=0, cases={[(fn, None) for fn in input_filenames]})
 
-lines = read_input_lines(default_idx=0, filenames={input_filenames})
+linecount = len(list(case_lines()))
 
-print(lines)
+assert_solution(linecount)
 """
 
 
