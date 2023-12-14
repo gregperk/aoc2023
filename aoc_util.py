@@ -45,19 +45,8 @@ def re_groups(regex: str, text: str) -> List[str]:
     return matches.groups() if matches else None
 
 
-def range_and(a, b):
-    return range(max(a.start, b.start), min(a.stop, b.stop))
-
-
-def range_minus(a, b):
-    i = range_and(a, b)
-    if len(i) == 0:
-        return [a]
-
-    result = []
-    if i.start > a.start:
-        result.append(range(a.start, i.start))
-    if i.stop < a.stop:
-        result.append(range(i.stop, a.stop))
-
-    return result
+class dotdict(dict):
+    """ Dictionary with dot-accessible keys. """
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
