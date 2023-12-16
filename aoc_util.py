@@ -5,7 +5,8 @@ from functools import reduce
 from collections import Counter, deque, defaultdict, namedtuple
 from math import gcd, lcm
 from operator import concat, eq, gt, lt, ne, xor, mul, mod
-from typing import List, Tuple, Generator
+from typing import List, Tuple, Generator, Iterable
+from numbers import Number
 
 
 def read_input_lines(default_idx: int = 0, filenames: List[str] = ["input.txt"]):
@@ -39,6 +40,9 @@ def assert_solution(answer: int) -> None:
     else:
         print(f"{answer} != {expected} ({filename})")
 
+
+def prod(numbers: Iterable[Number]) -> Number:
+    return reduce(mul, numbers, 1)
 
 def re_groups(regex: str, text: str) -> List[str]:
     matches = re.match(regex, text)
