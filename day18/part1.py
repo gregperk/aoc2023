@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from aoc_util import *
-set_cases(default_idx=-1, cases=[('example0.txt', 62), ('example1.txt', 97), ('example2.txt', 130), ('example3.txt', 124), ('example4.txt', 52), ('input.txt', 49897)])
+set_cases(default_idx=0, cases=[('example0.txt', 62), ('example1.txt', 97), ('example2.txt', 130), ('example3.txt', 122), ('example4.txt', 52), ('example5.txt', 52), ('example6.txt', 52), ('example7.txt', 64), ('input.txt', 49897)])
 
 dig_plan = [(g[0],int(g[1]),int(g[2],base=16)) for line in case_lines() if (g:=re_groups(r'([UDLR]) (\d+) \(#(......)\)', line))]
 
